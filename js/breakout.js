@@ -4,6 +4,7 @@ $(document).ready(function() {
     var ctx = myCanvas.getContext("2d");
 
     var score = 0;
+    var gameStart = false;
 
     //--Variables for bricks --
     var brickRowCount   = 4;
@@ -112,6 +113,10 @@ $(document).ready(function() {
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
     function keyDownHandler(e) {
+      if(gameStart == false) {
+        setInterval(draw, 15);
+        gameStart = true;
+      }
       if(e.keyCode == 39) {
         rightPressed = true;
       }
@@ -120,6 +125,10 @@ $(document).ready(function() {
       }
     }
     function keyUpHandler(e) {
+      if(gameStart == false) {
+        setInterval(draw, 15);
+        gameStart = true;
+      }
       if(e.keyCode == 39) {
         rightPressed = false;
       }
@@ -145,7 +154,6 @@ $(document).ready(function() {
         }
       }
     }
-
-    setInterval(draw, 15);
+    draw();
 });
 

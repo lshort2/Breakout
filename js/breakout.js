@@ -39,7 +39,7 @@ $(document).ready(function() {
     var leftPressed  = false;
 
     function drawScore() {
-      ctx.font = "16px Veranda";
+      ctx.font = "bold 16px Veranda";
       ctx.fillStyle = "#ff6600";
       ctx.fillText("Score: "+score, 8, 20);
     }
